@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Social Share Thumbnail Metadata -->
-<meta property="og:title" content="🍅 番茄醬節奏大師">
-<meta property="og:description" content="第一拍準確出發，按住持續長音對齊！專為音樂節奏聽覺與時長感知設計的網頁遊戲。">
+<meta property="og:title" content="番茄醬節奏大師">
+<meta property="og:description" content="第一拍準確出發，按住持續長音對齊！專為音樂節奏聽覺與時長感知設計的網頁街機特訓遊戲。">
 <meta property="og:image" content="social_share_thumb.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="social_share_thumb.png">
-<title>🍅 番茄醬節奏大師</title>
+<title>🍅 番茄醬節奏大師 </title>
 <style>
   :root {
     --primary: #FF4757;
@@ -307,7 +307,7 @@
   <div class="home-cluster">
     <div class="home-title-logo">
       <div class="logo-sub">⭐ 台灣黑熊主廚特訓 ⭐</div>
-      <h1 class="logo-main">擠番茄醬大師<span style="color:#FF4757;">!!</span></h1>
+      <h1 class="logo-main">Go!擠番茄醬大師<span style="color:#FF4757;">!!</span></h1>
     </div>
     <button class="btn-start-cover" onclick="enterGameFromHome()">
       Start
@@ -330,6 +330,7 @@
     🔄 再次挑戰
   </button>
 </div>
+<audio id="bgmAudio" src="bgm1.mp3" loop preload="auto"></audio>
 <canvas id="studioCanvas"></canvas>
 <div class="feedback-toast" id="feedbackToast">PERFECT!</div>
 <div class="fc-badge" id="fcBadge">👑 FULL COMBO!</div>
@@ -353,8 +354,8 @@
 </header>
 <footer class="bottom-controls">
   <div class="btn-row">
-    <button class="action-btn btn-demo" onclick="startDemo()">🎧【示範】</button>
-    <button class="action-btn btn-start" onclick="startGame()">🚀【立即挑戰】</button>
+    <button class="action-btn btn-demo" onclick="startDemo()">🎧示範</button>
+    <button class="action-btn btn-start" onclick="startGame()">🚀立即挑戰</button>
   </div>
   <div class="hint-pill">
     💡 看到光束抵達金環：按壓電腦 <b>[空白鍵 Space / Z / X]</b> 或 <b>[點按畫面]</b> 擠出長音！
@@ -363,7 +364,7 @@
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
   <aside class="drawer-panel">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3.5px solid var(--border-dark); padding-bottom:14px;">
-      <h3 style="font-size:1.45rem; font-weight:900;">⚙️ 系統設定與關卡庫</h3>
+      <h3 style="font-size:1.45rem; font-weight:900;">⚙️ 設定</h3>
       <button class="icon-btn" style="padding:6px 14px;" onclick="toggleDrawer(false)">✕</button>
     </div>
     <div class="setting-row">
@@ -413,45 +414,24 @@
   </div>
 </div>
 <script>
-let synthBGMLoop = null;
-let synthBGMChordIdx = 0;
-let bgmStarted = false;
-
 function tryStartHomeBGM() {
   initAudio();
-  startSynthBGM();
-}
-
-function startSynthBGM() {
-  if (!soundEnabled || synthBGMLoop) return;
-  initAudio();
-  bgmStarted = true;
-  const chordProgression = [
-    [261.63, 329.63, 392.00],
-    [220.00, 261.63, 329.63],
-    [174.61, 220.00, 261.63],
-    [196.00, 246.94, 293.66]
-  ];
-  function playBGMChord() {
-    if (!soundEnabled || !bgmStarted) return;
-    const chord = chordProgression[synthBGMChordIdx % chordProgression.length];
-    chord.forEach((freq, i) => playTone(freq, 1.7, 'sine', 0.05));
-    playTone(chord[0] / 2, 1.7, 'triangle', 0.06);
-    synthBGMChordIdx++;
+  const bgm = document.getElementById('bgmAudio');
+  if (bgm && soundEnabled && bgm.paused) {
+    bgm.volume = 0.5;
+    bgm.play().catch(e => {});
   }
-  playBGMChord();
-  synthBGMLoop = setInterval(playBGMChord, 1850);
 }
 
-function stopSynthBGM() {
-  bgmStarted = false;
-  if (synthBGMLoop) { clearInterval(synthBGMLoop); synthBGMLoop = null; }
+function stopHomeBGM() {
+  const bgm = document.getElementById('bgmAudio');
+  if (bgm) { bgm.pause(); bgm.currentTime = 0; }
 }
 
 function enterGameFromHome() {
   document.getElementById('homeScreen').classList.add('hidden');
   initAudio();
-  stopSynthBGM();
+  stopHomeBGM();
 }
 function toggleDrawer(show) {
   const overlay = document.getElementById('drawerOverlay');
@@ -473,8 +453,9 @@ function toggleSound() {
     btn.textContent = soundEnabled ? '🔊 開啟' : '🔇 關閉';
     btn.style.background = soundEnabled ? '#2ED573' : '#FF4757';
   }
-  if (!soundEnabled) { stopSynthBGM(); }
-  else if (document.getElementById('homeScreen') && !document.getElementById('homeScreen').classList.contains('hidden')) { startSynthBGM(); }
+  const onHome = document.getElementById('homeScreen') && !document.getElementById('homeScreen').classList.contains('hidden');
+  if (!soundEnabled) { if (onHome) stopHomeBGM(); }
+  else if (onHome) { tryStartHomeBGM(); }
 }
 function playTone(freq, dur, type = 'sine', gainVal = 0.3) {
   if (!soundEnabled) return;
@@ -700,9 +681,9 @@ function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
     ctx.fillStyle = '#2F3542';
     ctx.beginPath(); ctx.roundRect(W - 310, shelfY1 - 78, 120, 70, 10); ctx.fill();
     ctx.fillStyle = '#FFD32A'; ctx.font = '800 15px sans-serif';
-    ctx.fillText('本店招牌', W - 290, shelfY1 - 50);
+    ctx.fillText('本日特菜', W - 290, shelfY1 - 50);
     ctx.fillStyle = '#FFF';
-    ctx.fillText('售完為止', W - 290, shelfY1 - 24);
+    ctx.fillText('現烤香腸', W - 290, shelfY1 - 24);
     ctx.fillStyle = '#Eccc68';
     ctx.beginPath(); ctx.roundRect(W - 165, shelfY1 - 50, 28, 50, 8); ctx.fill();
     ctx.fillStyle = '#FF6B81';
