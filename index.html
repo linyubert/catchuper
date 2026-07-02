@@ -418,7 +418,7 @@ function tryStartHomeBGM() {
   initAudio();
   const bgm = document.getElementById('bgmAudio');
   if (bgm && soundEnabled && bgm.paused) {
-    bgm.volume = 0.5;
+    bgm.volume = 0.08;
     bgm.play().catch(e => {});
   }
 }
