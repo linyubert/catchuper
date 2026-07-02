@@ -20,7 +20,6 @@
     --text-dark: #2C3A47;
     --text-sub: #747D8C;
   }
-
   * {
     box-sizing: border-box;
     margin: 0;
@@ -28,12 +27,10 @@
     user-select: none;
     -webkit-font-smoothing: antialiased;
   }
-
   /* 1. Custom Ketchup Bottle Cursor across entire game! */
   body, html, * {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g transform="rotate(-35 18 18)"><rect x="11" y="14" width="14" height="18" rx="4" fill="%23FF4757" stroke="%232C3A47" stroke-width="2.5"/><polygon points="14,14 22,14 18,3" fill="%23FFD32A" stroke="%232C3A47" stroke-width="2.5"/><circle cx="18" cy="3" r="2" fill="%23FF0000"/><rect x="13" y="19" width="10" height="7" rx="2" fill="%23FFF"/><circle cx="18" cy="22.5" r="2" fill="%23FF4757"/></g></svg>') 4 4, auto !important;
   }
-
   body, html {
     width: 100vw;
     height: 100vh;
@@ -42,8 +39,6 @@
     background-color: #FFFDF9;
     color: var(--text-dark);
   }
-
-  /* Full-Screen Full-Bleed Canvas */
   #studioCanvas {
     position: absolute;
     top: 0;
@@ -52,8 +47,6 @@
     height: 100vh;
     z-index: 1;
   }
-
-  /* --- Unified Single-Line Master Top Bar (同一列！) --- */
   .master-top-bar {
     position: fixed;
     top: 14px;
@@ -66,9 +59,7 @@
     pointer-events: none;
     gap: 12px;
   }
-
   .master-top-bar > * { pointer-events: auto; }
-
   .bar-pill {
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(8px);
@@ -82,23 +73,18 @@
     box-shadow: 0 3px 0 rgba(0,0,0,0.12);
     height: 44px;
   }
-
   .brand-pill { font-size: 1.05rem; color: var(--text-dark); flex-shrink: 0; }
-  
   .question-pill {
     background: rgba(255, 248, 231, 0.95);
     border-color: var(--border-dark);
   }
   .stage-badge { background: #FF4757; color: #FFF; font-size: 0.78rem; padding: 2px 8px; border-radius: 6px; border: 1.5px solid var(--border-dark); }
   .dish-title { font-size: 1.15rem; color: var(--text-dark); }
-
   .stats-pill { font-size: 0.92rem; gap: 14px; }
   .stat-item { display: flex; align-items: center; gap: 4px; }
   .stat-item .val { color: var(--primary); font-size: 1.1rem; }
   .stat-item .val.combo { color: var(--accent); }
-
   .actions-group { display: flex; gap: 8px; height: 44px; }
-
   .icon-btn {
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(8px);
@@ -115,11 +101,8 @@
     gap: 6px;
     height: 100%;
   }
-
   .icon-btn:hover { background: #FFF3CD; border-color: var(--primary); }
   .icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--border-dark); }
-
-  /* --- Bottom-Center Streamlined Controls (中下方，精簡文字) --- */
   .bottom-controls {
     position: fixed;
     bottom: 18px;
@@ -131,13 +114,11 @@
     gap: 8px;
     z-index: 10;
   }
-
   .btn-row {
     display: flex;
     gap: 14px;
     justify-content: center;
   }
-
   .action-btn {
     padding: 10px 28px;
     border: 3.5px solid var(--border-dark);
@@ -155,11 +136,9 @@
     transform: translateY(3px);
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3), 0 2px 0 var(--border-dark) !important;
   }
-
   .action-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--border-dark); }
   .btn-demo { background: #FFA502; color: #FFF; }
   .btn-start { background: #2ED573; color: #FFF; }
-
   .hint-pill {
     background: transparent;
     border: none;
@@ -170,8 +149,6 @@
     box-shadow: none;
     text-shadow: none;
   }
-
-  /* Overlays */
   .feedback-toast {
     position: fixed;
     top: 135px;
@@ -190,7 +167,6 @@
     box-shadow: 0 4px 0 var(--border-dark);
   }
   .feedback-toast.show { opacity: 1; transform: translateX(-50%) scale(1); }
-
   .fc-badge {
     position: fixed;
     top: 185px;
@@ -209,8 +185,6 @@
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .fc-badge.show { transform: translateX(-50%) scale(1); }
-
-  /* Modals */
   .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(0,0,0,0.68); backdrop-filter: blur(6px);
@@ -223,7 +197,6 @@
     width: 90%; max-width: 460px; border-radius: 26px; padding: 26px;
     box-shadow: 0 15px 0 rgba(0,0,0,0.35); text-align: center;
   }
-
   .drawer-panel {
     position: fixed; top: 0; right: 0; width: 100%; max-width: 440px; height: 100vh;
     background: #FFF; border-left: 4.5px solid var(--border-dark); z-index: 1100;
@@ -237,15 +210,11 @@
   }
   .drawer-overlay.show { opacity: 1; pointer-events: auto; }
   .drawer-overlay.show .drawer-panel { transform: translateX(0); }
-
   .setting-row { display: flex; justify-content: space-between; align-items: center; background: #F8F9FA; border: 3px solid var(--border-dark); padding: 12px 16px; border-radius: 14px; font-weight: 900; }
   .setting-row select, .setting-row input { border: 2.5px solid var(--border-dark); padding: 6px 10px; border-radius: 8px; font-weight: 900; }
-
   .drawer-stage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .stage-card { background: #FFF; border: 3px solid var(--border-dark); border-radius: 16px; padding: 12px; text-align: center; cursor: pointer; transition: all 0.15s; font-weight: 900; }
   .stage-card:hover, .stage-card.active { background: #FFEAA7; border-color: #FF4757; }
-
-  /* --- Final 10-Stage Celebration Screen Overlay (十關大滿貫賀圖 cover2.png) --- */
   .victory-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: url('cover2.png') center/cover no-repeat, radial-gradient(circle at 50% 50%, #FFF8E7, #FFD3B6);
@@ -253,7 +222,6 @@
     padding: 40px; z-index: 2500; transition: opacity 0.5s ease;
   }
   .victory-overlay.hidden { opacity: 0; pointer-events: none; }
-
   .btn-restart-victory {
     position: fixed;
     bottom: 35px;
@@ -268,8 +236,6 @@
   }
   .btn-restart-victory:hover { background: linear-gradient(135deg, #34D399, #059669); transform: translateY(-2px); }
   .btn-restart-victory:active { transform: translateY(5px); box-shadow: 0 2px 0 var(--border-dark); }
-
-  /* --- Home / Title Screen Overlay (參考 cover.png 滿版封面風格) --- */
   .home-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: url('title_cover.png') center/cover no-repeat, radial-gradient(circle at 50% 30%, #FFF8E7, #FFD3B6);
@@ -277,14 +243,12 @@
     padding: 45px 55px; z-index: 2000; transition: opacity 0.4s ease;
   }
   .home-overlay.hidden { opacity: 0; pointer-events: none; }
-
   .home-cluster {
     display: flex; flex-direction: column; gap: 16px;
     align-items: flex-start;
     animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
   @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
   .home-title-logo {
     margin-bottom: 10px;
     animation: bounceLogo 2.5s infinite ease-in-out;
@@ -307,7 +271,6 @@
     letter-spacing: 2px;
     line-height: 1.1;
   }
-
   .btn-start-cover {
     background: linear-gradient(180deg, #FFE866, #FFB800);
     color: #2C3A47; border: 4.5px solid #2C3A47; border-radius: 22px;
@@ -318,9 +281,7 @@
   }
   .btn-start-cover:hover { background: linear-gradient(180deg, #FFF088, #FFC722); transform: translateY(-2px); }
   .btn-start-cover:active { transform: translateY(5px); box-shadow: 0 2px 0 #2C3A47; }
-
   .social-row { display: flex; gap: 14px; width: 290px; }
-
   .social-pill {
     flex: 1; padding: 11px 14px; border-radius: 30px;
     font-size: 1.05rem; font-weight: 900; text-decoration: none;
@@ -333,7 +294,6 @@
   .threads-pill:hover { background: #333333; }
   .yt-pill { background: #FF0000; color: #FFFFFF; }
   .yt-pill:hover { background: #FF3333; }
-
   .f11-hint {
     background: rgba(20, 25, 35, 0.82); backdrop-filter: blur(6px);
     color: #FFFFFF; font-size: 0.9rem; font-weight: 800;
@@ -343,19 +303,15 @@
 </style>
 </head>
 <body>
-
-<!-- Home / Title Screen Overlay (16:9手遊風格與大字標題) -->
-<div class="home-overlay" id="homeScreen" onclick="const b=document.getElementById('bgmAudio'); if(b&&b.paused&&soundEnabled)b.play().catch(e=>{});">
+<div class="home-overlay" id="homeScreen" onclick="tryStartHomeBGM()">
   <div class="home-cluster">
     <div class="home-title-logo">
       <div class="logo-sub">⭐ 台灣黑熊主廚特訓 ⭐</div>
       <h1 class="logo-main">擠番茄醬大師<span style="color:#FF4757;">!!</span></h1>
     </div>
-
     <button class="btn-start-cover" onclick="enterGameFromHome()">
       Start
     </button>
-
     <div class="social-row">
       <a href="https://www.threads.com/@lycbert" target="_blank" class="social-pill threads-pill">
         <span>💬</span><span>Threads</span>
@@ -364,57 +320,37 @@
         <span>▶</span><span>YouTube</span>
       </a>
     </div>
-
-
-
     <div class="f11-hint">
       建議按 <b style="color:#FFD32A;">F11</b> 進入全螢幕，取得較佳遊戲體驗。
     </div>
   </div>
 </div>
-
-<!-- Final 10-Stage Completion Victory Screen (自行嵌入 cover2.png 賀圖) -->
 <div class="victory-overlay hidden" id="victoryScreen">
   <button class="btn-restart-victory" onclick="restartAllStages()">
     🔄 再次挑戰
   </button>
 </div>
-
-<!-- Full-Screen Interactive Canvas --><!-- Full-Screen Interactive Canvas -->
 <canvas id="studioCanvas"></canvas>
-
-<!-- Feedback Overlays -->
 <div class="feedback-toast" id="feedbackToast">PERFECT!</div>
 <div class="fc-badge" id="fcBadge">👑 FULL COMBO!</div>
-
-<!-- Unified Single-Line Master Top Bar (精簡四大要件) -->
 <header class="master-top-bar">
-  <!-- 1. Brand -->
   <div class="bar-pill brand-pill">
     <span>🍅</span><span>節奏大師</span>
   </div>
-
-  <!-- 2. Question -->
   <div class="bar-pill question-pill">
     <span style="font-size:1.45rem;" id="npcAvatar">🐻</span>
     <span class="stage-badge" id="stageBadgeText">STAGE 01</span>
     <span class="dish-title" id="dishNameText">均等四拍香腸</span>
   </div>
-
-  <!-- 3. Stats -->
   <div class="bar-pill stats-pill">
     <div class="stat-item"><span>分:</span><span class="val" id="scoreText">0</span></div>
     <div class="stat-item"><span>連:</span><span class="val combo" id="comboText">0</span></div>
     <div class="stat-item" id="lifeText" style="letter-spacing:1px;">❤️❤️❤️❤️❤️</div>
   </div>
-
-  <!-- 4. Settings -->
   <div class="actions-group">
     <button class="icon-btn" onclick="toggleDrawer(true)">⚙️ 設定</button>
   </div>
 </header>
-
-<!-- Bottom-Center Streamlined Controls (中下方，文字精簡) -->
 <footer class="bottom-controls">
   <div class="btn-row">
     <button class="action-btn btn-demo" onclick="startDemo()">🎧【示範】</button>
@@ -424,20 +360,16 @@
     💡 看到光束抵達金環：按壓電腦 <b>[空白鍵 Space / Z / X]</b> 或 <b>[點按畫面]</b> 擠出長音！
   </div>
 </footer>
-
-<!-- Right Slide-out Drawer -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
   <aside class="drawer-panel">
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3.5px solid var(--border-dark); padding-bottom:14px;">
       <h3 style="font-size:1.45rem; font-weight:900;">⚙️ 系統設定與關卡庫</h3>
       <button class="icon-btn" style="padding:6px 14px;" onclick="toggleDrawer(false)">✕</button>
     </div>
-
     <div class="setting-row">
       <span>遊戲主音效</span>
       <button class="icon-btn" id="soundDrawerBtn" style="background:#2ED573; color:#FFF; border-color:var(--border-dark);" onclick="toggleSound()">🔊 開啟</button>
     </div>
-
     <div class="setting-row">
       <span>節奏速度 (BPM)</span>
       <select id="bpmSelect" onchange="updateBPM()">
@@ -447,7 +379,6 @@
         <option value="120">120 BPM (極速)</option>
       </select>
     </div>
-
     <div class="setting-row">
       <span>節拍器音效</span>
       <select id="tickSelect">
@@ -456,7 +387,6 @@
         <option value="mute">靜音</option>
       </select>
     </div>
-
     <div style="background:#FFF8E7; border:3px solid var(--border-dark); padding:14px; border-radius:16px;">
       <div style="font-weight:900; margin-bottom:8px; color:#FF4757;">✏️ 自訂比例出題</div>
       <div style="display:flex; gap:8px;">
@@ -464,15 +394,12 @@
         <button class="icon-btn" style="background:#2ED573; color:#FFF;" onclick="applyCustomRatio()">套用</button>
       </div>
     </div>
-
     <div>
       <div style="font-weight:900; margin-bottom:12px; font-size:1.1rem;">🏆 10 關卡挑選 (歷史記錄)</div>
       <div class="drawer-stage-grid" id="drawerStageGrid"></div>
     </div>
   </aside>
 </div>
-
-<!-- Result Modal -->
 <div class="modal-overlay" id="resultModal">
   <div class="modal-card">
     <div id="modalEmoji" style="font-size: 4.5rem; margin-bottom: 8px;">🎉</div>
@@ -485,42 +412,60 @@
     </div>
   </div>
 </div>
-
 <script>
-
 let synthBGMLoop = null;
+let synthBGMChordIdx = 0;
+let bgmStarted = false;
+
+function tryStartHomeBGM() {
+  initAudio();
+  startSynthBGM();
+}
+
+function startSynthBGM() {
+  if (!soundEnabled || synthBGMLoop) return;
+  initAudio();
+  bgmStarted = true;
+  const chordProgression = [
+    [261.63, 329.63, 392.00],
+    [220.00, 261.63, 329.63],
+    [174.61, 220.00, 261.63],
+    [196.00, 246.94, 293.66]
+  ];
+  function playBGMChord() {
+    if (!soundEnabled || !bgmStarted) return;
+    const chord = chordProgression[synthBGMChordIdx % chordProgression.length];
+    chord.forEach((freq, i) => playTone(freq, 1.7, 'sine', 0.05));
+    playTone(chord[0] / 2, 1.7, 'triangle', 0.06);
+    synthBGMChordIdx++;
+  }
+  playBGMChord();
+  synthBGMLoop = setInterval(playBGMChord, 1850);
+}
+
+function stopSynthBGM() {
+  bgmStarted = false;
+  if (synthBGMLoop) { clearInterval(synthBGMLoop); synthBGMLoop = null; }
+}
 
 function enterGameFromHome() {
   document.getElementById('homeScreen').classList.add('hidden');
   initAudio();
-  const bgm = document.getElementById('bgmAudio');
-  if (bgm) { bgm.pause(); bgm.currentTime = 0; }
-  if (synthBGMLoop) { clearInterval(synthBGMLoop); synthBGMLoop = null; }
+  stopSynthBGM();
 }
-
 function toggleDrawer(show) {
   const overlay = document.getElementById('drawerOverlay');
   if (show) { buildDrawerGrid(); overlay.classList.add('show'); }
   else { overlay.classList.remove('show'); }
 }
-
 function closeDrawerOutside(e) { if (e.target.id === 'drawerOverlay') toggleDrawer(false); }
-
-// --- Audio API ---
 let audioCtx = null, soundEnabled = true, activeHoldOsc = null, activeHoldGain = null;
 const SCALE_FREQUENCIES = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33, 659.25];
 let currentScaleIdx = 0;
-
 function initAudio() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   if (audioCtx.state === 'suspended') audioCtx.resume();
 }
-
-function stopBGM() {
-  const bgm = document.getElementById('bgmAudio');
-  if (bgm) { bgm.pause(); bgm.currentTime = 0; }
-}
-
 function toggleSound() {
   soundEnabled = !soundEnabled;
   const btn = document.getElementById('soundDrawerBtn');
@@ -528,8 +473,9 @@ function toggleSound() {
     btn.textContent = soundEnabled ? '🔊 開啟' : '🔇 關閉';
     btn.style.background = soundEnabled ? '#2ED573' : '#FF4757';
   }
+  if (!soundEnabled) { stopSynthBGM(); }
+  else if (document.getElementById('homeScreen') && !document.getElementById('homeScreen').classList.contains('hidden')) { startSynthBGM(); }
 }
-
 function playTone(freq, dur, type = 'sine', gainVal = 0.3) {
   if (!soundEnabled) return;
   initAudio();
@@ -541,17 +487,13 @@ function playTone(freq, dur, type = 'sine', gainVal = 0.3) {
   osc.connect(gain); gain.connect(audioCtx.destination);
   osc.start(); osc.stop(audioCtx.currentTime + dur);
 }
-
 function startHoldSound() {
   if (!soundEnabled) return;
   initAudio();
   if (activeHoldOsc) stopHoldSound(false);
-
   const targetFreq = SCALE_FREQUENCIES[currentScaleIdx % SCALE_FREQUENCIES.length];
   currentScaleIdx++;
-
   playTone(targetFreq, 0.25, 'triangle', 0.45);
-
   activeHoldOsc = audioCtx.createOscillator();
   activeHoldGain = audioCtx.createGain();
   activeHoldOsc.type = 'sawtooth'; activeHoldOsc.frequency.setValueAtTime(targetFreq, audioCtx.currentTime);
@@ -560,7 +502,6 @@ function startHoldSound() {
   activeHoldOsc.connect(filter); filter.connect(activeHoldGain); activeHoldGain.connect(audioCtx.destination);
   activeHoldOsc.start();
 }
-
 function stopHoldSound(isSuccess = true) {
   if (activeHoldOsc && activeHoldGain && audioCtx) {
     try { activeHoldGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.06); activeHoldOsc.stop(audioCtx.currentTime + 0.06); } catch(e){}
@@ -568,31 +509,25 @@ function stopHoldSound(isSuccess = true) {
   }
   if (isSuccess && soundEnabled) playTone(880, 0.12, 'sine', 0.4);
 }
-
 function playTickSound(isStart = false) {
   if (!soundEnabled) return;
   initAudio();
   if (isStart) {
-    // 亮亮的起跑音高 (GO!)
     playTone(880, 0.2, 'sine', 0.55);
   } else {
-    // 清脆響亮的木魚/節拍器敲擊聲 (660Hz, 80ms)
     playTone(660, 0.08, 'triangle', 0.48);
   }
 }
-
 function playFanfare(isWin = true) {
   if (!soundEnabled) return;
   initAudio();
   if (isWin) {
-    // Triumphant ascending fanfare: C5 -> E5 -> G5 -> C6
     const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, idx) => {
       setTimeout(() => playTone(freq, 0.28, 'triangle', 0.42), idx * 110);
     });
   } else {
-    // Authentic Arcade Sad Trombone / Defeat Sound Effect (正宗關卡失敗音效)
-    const failNotes = [466.16, 440.00, 415.30]; // Bb4, A4, Ab4
+    const failNotes = [466.16, 440.00, 415.30];
     failNotes.forEach((freq, idx) => {
       setTimeout(() => {
         if (!audioCtx) return;
@@ -607,14 +542,12 @@ function playFanfare(isWin = true) {
         osc.start(); osc.stop(audioCtx.currentTime + 0.22);
       }, idx * 240);
     });
-
-    // Final long sad slide down ("Wompppppp")
     setTimeout(() => {
       if (!audioCtx) return;
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
       osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(392.00, audioCtx.currentTime); // G4
+      osc.frequency.setValueAtTime(392.00, audioCtx.currentTime);
       osc.frequency.exponentialRampToValueAtTime(160.00, audioCtx.currentTime + 0.85);
       gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.85);
@@ -623,8 +556,6 @@ function playFanfare(isWin = true) {
     }, 720);
   }
 }
-
-// --- Stages Data ---
 const STAGES = [
   { id: 1, ratio: [1, 1, 1, 1], food: '均等四拍香腸', color: '#D35400' },
   { id: 2, ratio: [1, 1, 2], food: '長尾二拍香腸', color: '#E15F41' },
@@ -637,17 +568,14 @@ const STAGES = [
   { id: 9, ratio: [0.5, 0.5, 1, 1, 1], food: '前半快手香腸', color: '#E67E22' },
   { id: 10, ratio: [0.5, 0.5, 0.5, 0.5, 2], food: '終極連擠香腸', color: '#C0392B' }
 ];
-
 let currentStageIdx = 0, currentRatio = STAGES[0].ratio, currentFoodInfo = STAGES[0];
 let bpm = 80, isPlaying = false, isDemo = false;
 let startTimestamp = 0, leadInDuration = 0, barDuration = 0, noteList = [], isHolding = false, activeNoteIdx = -1;
 let score = 0, combo = 0, lives = 5;
 let particles = [];
 let plateShake = 0;
-
 const canvas = document.getElementById('studioCanvas');
 const ctx = canvas ? canvas.getContext('2d') : null;
-
 function resizeCanvas() {
   if (!canvas) return;
   canvas.width = window.innerWidth;
@@ -655,13 +583,11 @@ function resizeCanvas() {
   drawScene(0, false, null);
 }
 window.addEventListener('resize', resizeCanvas);
-
 function updateHUD() {
   document.getElementById('scoreText').textContent = score;
   document.getElementById('comboText').textContent = combo;
   document.getElementById('lifeText').textContent = '❤️'.repeat(Math.max(0, lives)) + '🤍'.repeat(Math.max(0, 5 - lives));
 }
-
 function updateStageDisplay() {
   const stage = STAGES[currentStageIdx];
   currentRatio = stage.ratio; currentFoodInfo = stage;
@@ -670,7 +596,6 @@ function updateStageDisplay() {
   const rBox = document.getElementById('ratioBigText'); if (rBox) rBox.textContent = stage.ratio.join(' : ');
   calculateNoteList(); resetBoard();
 }
-
 function calculateNoteList() {
   noteList = [];
   const sum = currentRatio.reduce((a, b) => a + b, 0);
@@ -680,16 +605,13 @@ function calculateNoteList() {
     noteList.push({ startNorm, endNorm, durationNorm: endNorm - startNorm, hitStart: false, hitEnd: false, actualStartNorm: null, actualEndNorm: null, feedback: '' });
   }
 }
-
 function updateBPM() { bpm = parseInt(document.getElementById('bpmSelect').value, 10); }
-
 function getStageRecord(id) {
   try { return localStorage.getItem('rhythm_chef_stage_' + id) || '未挑戰'; } catch(e) { return '未挑戰'; }
 }
 function setStageRecord(id, stars) {
   try { localStorage.setItem('rhythm_chef_stage_' + id, stars); } catch(e) {}
 }
-
 function buildDrawerGrid() {
   const grid = document.getElementById('drawerStageGrid');
   grid.innerHTML = '';
@@ -702,7 +624,6 @@ function buildDrawerGrid() {
     grid.appendChild(card);
   });
 }
-
 function applyCustomRatio() {
   const input = document.getElementById('customRatioInput').value.trim();
   const parts = input.split(/[:\s,]+/).map(Number).filter(n => !isNaN(n) && n > 0);
@@ -713,14 +634,12 @@ function applyCustomRatio() {
   const rBox2 = document.getElementById('ratioBigText'); if (rBox2) rBox2.textContent = parts.join(' : ');
   calculateNoteList(); resetBoard(); toggleDrawer(false);
 }
-
 function resetBoard() {
   isPlaying = false; isDemo = false; isHolding = false; activeNoteIdx = -1; currentScaleIdx = 0;
   particles = []; plateShake = 0; stopHoldSound(false);
   document.getElementById('fcBadge').classList.remove('show');
   drawScene(0, false, null);
 }
-
 function spawnParticles(x, y, color = '#FF4757') {
   for (let i = 0; i < 14; i++) {
     particles.push({
@@ -733,96 +652,68 @@ function spawnParticles(x, y, color = '#FF4757') {
     });
   }
 }
-
-// --- Perfectly Centered Landscape Drawing Engine (ZERO Overlap!) ---
 function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
   if (!ctx) return;
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0, 0, W, H);
-
   ctx.save();
   if (plateShake > 0.2) {
     ctx.translate((Math.random() - 0.5) * plateShake, (Math.random() - 0.5) * plateShake);
     plateShake *= 0.85;
   }
-
-  // 1. Widescreen Blurred Gourmet Store Backdrop (商店物件景深霧化背景)
   const wallH = H * 0.44;
   ctx.fillStyle = '#FFFDF9';
   ctx.fillRect(0, 0, W, wallH);
-
   ctx.save();
   try { ctx.filter = 'blur(4px)'; } catch(e) {}
-
-  // A. Wooden Ceiling Beam & Shop Noren Rail
   ctx.fillStyle = '#D49A6A';
   ctx.fillRect(0, 0, W, 22);
   ctx.fillStyle = 'rgba(0,0,0,0.06)';
   ctx.fillRect(0, 22, W, 5);
-
-  // B. Hanging Sausages & Garlic Links
   for (let hx = 140; hx < W - 60; hx += 320) {
     ctx.strokeStyle = '#A87042'; ctx.lineWidth = 2.5;
     ctx.beginPath(); ctx.moveTo(hx, 22); ctx.lineTo(hx, 60); ctx.stroke();
     ctx.fillStyle = '#D35400';
     ctx.beginPath(); ctx.roundRect(hx - 12, 60, 24, 46, 12); ctx.fill();
     ctx.beginPath(); ctx.roundRect(hx - 12, 112, 24, 46, 12); ctx.fill();
-    // Garlic bulb
     ctx.fillStyle = '#FFF8E7';
     ctx.beginPath(); ctx.arc(hx + 40, 75, 14, 0, Math.PI * 2); ctx.fill();
   }
-
-  // C. Shop Wall Shelves & Sauce Bottles
   const shelfY1 = wallH * 0.55;
   if (W > 650) {
-    // Left wooden shelf
     ctx.fillStyle = '#C88A58';
     ctx.beginPath(); ctx.roundRect(50, shelfY1, 260, 14, 6); ctx.fill();
-    // Ketchup bottle on shelf
     ctx.fillStyle = '#FF4757';
     ctx.beginPath(); ctx.roundRect(80, shelfY1 - 54, 24, 54, 8); ctx.fill();
     ctx.fillStyle = '#FFD32A';
     ctx.beginPath(); ctx.roundRect(84, shelfY1 - 64, 16, 12, 4); ctx.fill();
-    // Mustard bottle
     ctx.fillStyle = '#FFA502';
     ctx.beginPath(); ctx.roundRect(130, shelfY1 - 46, 26, 46, 8); ctx.fill();
-    // Spice jars
     ctx.fillStyle = '#2ED573';
     ctx.beginPath(); ctx.roundRect(185, shelfY1 - 38, 30, 38, 8); ctx.fill();
     ctx.fillStyle = '#1E90FF';
     ctx.beginPath(); ctx.roundRect(235, shelfY1 - 42, 24, 42, 6); ctx.fill();
   }
-
   if (W > 920) {
-    // Right wooden shelf & chalkboard menu
     ctx.fillStyle = '#C88A58';
     ctx.beginPath(); ctx.roundRect(W - 340, shelfY1, 280, 14, 6); ctx.fill();
-    // Chalkboard sign
     ctx.fillStyle = '#2F3542';
     ctx.beginPath(); ctx.roundRect(W - 310, shelfY1 - 78, 120, 70, 10); ctx.fill();
     ctx.fillStyle = '#FFD32A'; ctx.font = '800 15px sans-serif';
     ctx.fillText('本日特菜', W - 290, shelfY1 - 50);
     ctx.fillStyle = '#FFF';
     ctx.fillText('現烤香腸', W - 290, shelfY1 - 24);
-    // Olive oil & sauces
     ctx.fillStyle = '#Eccc68';
     ctx.beginPath(); ctx.roundRect(W - 165, shelfY1 - 50, 28, 50, 8); ctx.fill();
     ctx.fillStyle = '#FF6B81';
     ctx.beginPath(); ctx.roundRect(W - 115, shelfY1 - 58, 24, 58, 8); ctx.fill();
   }
-
-  // Warm Bokeh Light Orbs (溫暖散景光斑)
   ctx.fillStyle = 'rgba(255, 211, 120, 0.4)';
   ctx.beginPath(); ctx.arc(W * 0.28, wallH * 0.35, 52, 0, Math.PI * 2); ctx.fill();
   ctx.beginPath(); ctx.arc(W * 0.72, wallH * 0.48, 65, 0, Math.PI * 2); ctx.fill();
-
-  ctx.restore(); // Reset filter back to none for crystal sharp foreground!
-
-  // Table base
+  ctx.restore();
   ctx.fillStyle = '#EAC69D';
   ctx.fillRect(0, H * 0.44, W, H * 0.56);
-
-  // Cozy Japanese Gingham Tablecloth Grid (斜紋餐布水玉格子暗紋)
   ctx.save();
   ctx.beginPath(); ctx.rect(0, H * 0.44, W, H * 0.56); ctx.clip();
   ctx.fillStyle = 'rgba(255, 255, 255, 0.22)';
@@ -834,25 +725,18 @@ function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
     ctx.fillRect(0, gy, W, 20);
   }
   ctx.restore();
-
   ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 4.5;
   ctx.beginPath(); ctx.moveTo(0, H * 0.44); ctx.lineTo(W, H * 0.44); ctx.stroke();
-
-  // 2. Centered Serving Plate  // 2. Centered Serving Plate (Placed between top question capsule and bottom timeline track!)
   const plateW = Math.min(940, W * 0.86);
   const plateH = Math.min(180, H * 0.30);
   const plateX = (W - plateW) / 2;
   const plateY = Math.max(120, H * 0.23);
-
   ctx.fillStyle = '#FFFFFF';
   ctx.beginPath(); ctx.roundRect(plateX, plateY, plateW, plateH, 28); ctx.fill();
   ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 4; ctx.stroke();
-
-  // Glossy Sausage inside plate
   const foodX = plateX + 40, foodW = plateW - 80, foodY = plateY + plateH * 0.22, foodH = plateH * 0.56;
   ctx.fillStyle = 'rgba(0,0,0,0.08)';
   ctx.beginPath(); ctx.roundRect(foodX + 6, foodY + 8, foodW, foodH, 36); ctx.fill();
-
   const sGrad = ctx.createLinearGradient(0, foodY, 0, foodY + foodH);
   sGrad.addColorStop(0, '#FF6B52');
   sGrad.addColorStop(0.35, currentFoodInfo.color);
@@ -861,123 +745,90 @@ function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
   ctx.fillStyle = sGrad;
   ctx.beginPath(); ctx.roundRect(foodX, foodY, foodW, foodH, 36); ctx.fill();
   ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 3.5; ctx.stroke();
-
-  // Grill marks
   ctx.save(); ctx.beginPath(); ctx.roundRect(foodX, foodY, foodW, foodH, 36); ctx.clip();
   ctx.strokeStyle = 'rgba(70, 15, 5, 0.22)'; ctx.lineWidth = 8;
   for (let gx = foodX + 30; gx < foodX + foodW; gx += 65) {
     ctx.beginPath(); ctx.moveTo(gx, foodY); ctx.lineTo(gx - 25, foodY + foodH); ctx.stroke();
   }
   ctx.restore();
-
-  // Upper Gloss Highlight
   const glossGrad = ctx.createLinearGradient(0, foodY + 6, 0, foodY + foodH * 0.35);
   glossGrad.addColorStop(0, 'rgba(255, 255, 255, 0.75)');
   glossGrad.addColorStop(1, 'rgba(255, 255, 255, 0.05)');
   ctx.fillStyle = glossGrad;
   ctx.beginPath(); ctx.roundRect(foodX + 16, foodY + 8, foodW - 32, foodH * 0.22, 10); ctx.fill();
-
-  // Beat divider ticks
   ctx.fillStyle = '#2C3A47'; ctx.font = '800 13px sans-serif';
   [0, 0.25, 0.5, 0.75, 1.0].forEach((norm, i) => {
     const x = foodX + norm * foodW;
     ctx.fillRect(x - 1.5, foodY - 8, 3, 8);
     if (i < 4) ctx.fillText(`第${i+1}拍`, x - 15, foodY - 14);
   });
-
-  // Note targets on food
   noteList.forEach(note => {
     const nx1 = foodX + note.startNorm * foodW, nx2 = foodX + note.endNorm * foodW;
     ctx.fillStyle = 'rgba(255, 71, 87, 0.18)';
     ctx.beginPath(); ctx.roundRect(nx1 + 4, foodY + foodH * 0.25, (nx2 - nx1) - 8, foodH * 0.5, 16); ctx.fill();
   });
-
-  // Squeezed Ketchup
   noteList.forEach(note => {
     if (note.actualStartNorm !== null) {
       let endDraw = note.actualEndNorm !== null ? note.actualEndNorm : progress;
       endDraw = Math.min(1.0, Math.max(note.actualStartNorm, endDraw));
       const kx1 = foodX + note.actualStartNorm * foodW, kx2 = foodX + endDraw * foodW;
       const kW = Math.max(20, kx2 - kx1);
-
       ctx.fillStyle = '#FF0000'; ctx.strokeStyle = '#B30000'; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.roundRect(kx1, foodY + foodH * 0.22, kW, foodH * 0.56, 18); ctx.fill(); ctx.stroke();
-
       ctx.fillStyle = '#FF8080';
       ctx.beginPath(); ctx.roundRect(kx1 + 8, foodY + foodH * 0.3, Math.max(4, kW - 16), foodH * 0.15, 4); ctx.fill();
     }
   });
-
-  // 3. Widescreen Centered Timeline Track (Placed below plate and above bottom buttons!)
   const trackW = plateW;
   const trackH = Math.max(60, Math.min(74, H * 0.10));
   const trackX = plateX;
   const trackY = plateY + plateH + Math.min(42, Math.max(25, (H - plateY - plateH - trackH - 75) / 2));
-
   ctx.fillStyle = '#FFF9D2';
   ctx.beginPath(); ctx.roundRect(trackX, trackY, trackW, trackH, trackH / 2); ctx.fill();
   ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 4.5; ctx.stroke();
-
   [0.25, 0.5, 0.75].forEach(norm => {
     const vx = trackX + norm * trackW;
     ctx.fillStyle = 'rgba(44, 58, 71, 0.22)';
     ctx.fillRect(vx - 1.5, trackY + 12, 3, trackH - 24);
   });
-
-  // Hold Note Bars & Golden Target Rings
   noteList.forEach(note => {
     const tx1 = trackX + note.startNorm * trackW, tx2 = trackX + note.endNorm * trackW;
     const barW = Math.max(16, (tx2 - tx1) - 6);
     const color = note.hitEnd ? '#2ED573' : (note.hitStart ? '#FFA502' : '#FF4757');
-
     ctx.fillStyle = color;
     ctx.beginPath(); ctx.roundRect(tx1 + 3, trackY + trackH * 0.25, barW, trackH * 0.5, 16); ctx.fill();
     ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 2.5; ctx.stroke();
-
     ctx.fillStyle = '#FFF9D2';
     ctx.beginPath(); ctx.arc(tx1 + trackH * 0.28, trackY + trackH / 2, trackH * 0.2, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 3.5; ctx.stroke();
-
     ctx.fillStyle = '#FFA502';
     ctx.beginPath(); ctx.arc(tx1 + trackH * 0.28, trackY + trackH / 2, trackH * 0.09, 0, Math.PI * 2); ctx.fill();
   });
-
-  // Scanline Playhead (High-Contrast Glowing Cyan/White Laser)
   if (isPlaying || isDemo) {
     if (inLeadIn) {
       const countText = leadInCount > 0 ? `倒數 ${leadInCount}` : '準備... 擠！';
       ctx.fillStyle = '#FFF'; ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 4;
       ctx.beginPath(); ctx.roundRect(W / 2 - 110, plateY + plateH / 2 - 30, 220, 60, 30); ctx.fill(); ctx.stroke();
-
       ctx.fillStyle = '#FF4757'; ctx.font = '900 32px sans-serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.fillText(countText, W / 2, plateY + plateH / 2);
       ctx.textAlign = 'left';
     } else {
       const scanX = trackX + progress * trackW;
-
       ctx.save();
       ctx.shadowColor = isHolding ? '#2ED573' : '#00E5FF';
       ctx.shadowBlur = 16;
-
-      // High-contrast glowing laser line
       ctx.strokeStyle = isHolding ? '#2ED573' : '#00E5FF'; ctx.lineWidth = 5;
       ctx.beginPath(); ctx.moveTo(scanX, plateY - 15); ctx.lineTo(scanX, trackY + trackH + 10); ctx.stroke();
       ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 2;
       ctx.beginPath(); ctx.moveTo(scanX, plateY - 15); ctx.lineTo(scanX, trackY + trackH + 10); ctx.stroke();
-
-      // Playhead Ring
       ctx.fillStyle = isHolding ? '#2ED573' : '#00E5FF';
       ctx.beginPath(); ctx.arc(scanX, trackY + trackH / 2, trackH * 0.32, 0, Math.PI * 2); ctx.fill();
       ctx.strokeStyle = '#2C3A47'; ctx.lineWidth = 4; ctx.stroke();
-
-      // Core white shine
       ctx.fillStyle = '#FFFFFF';
       ctx.beginPath(); ctx.arc(scanX, trackY + trackH / 2, trackH * 0.12, 0, Math.PI * 2); ctx.fill();
-
       ctx.restore();
       ctx.font = '34px sans-serif'; ctx.fillText('🍅', scanX - 17, foodY - 14);
-
       if (isDemo) {
         ctx.save();
         ctx.fillStyle = 'rgba(255, 165, 2, 0.92)';
@@ -990,8 +841,6 @@ function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
       }
     }
   }
-
-  // Draw Particles
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
     p.x += p.vx; p.y += p.vy; p.vy += 0.4; p.alpha -= 0.035;
@@ -1002,25 +851,20 @@ function drawScene(progress = 0, inLeadIn = false, leadInCount = null) {
   ctx.globalAlpha = 1;
   ctx.restore();
 }
-
-// --- Game Engine ---
 let animationFrameId = null, lastTickBeat = -1;
-
-function startDemo() { if (isPlaying || isDemo) return; initAudio(); stopBGM(); isDemo = true; runGameSequence(true); }
+function startDemo() { if (isPlaying || isDemo) return; initAudio(); isDemo = true; runGameSequence(true); }
 function startGame() {
   if (isPlaying || isDemo) return;
-  initAudio(); stopBGM(); isPlaying = true;
+  initAudio(); isPlaying = true;
   score = 0; combo = 0; lives = 5; updateHUD();
   document.getElementById('fcBadge').classList.remove('show');
   runGameSequence(false);
 }
-
 function runGameSequence(demoMode) {
   calculateNoteList(); lastTickBeat = -1; isHolding = false; activeNoteIdx = -1; currentScaleIdx = 0;
   const beatMs = (60 / bpm) * 1000;
   leadInDuration = beatMs * 4; barDuration = beatMs * 4;
   startTimestamp = performance.now();
-
   function loop(now) {
     const elapsed = now - startTimestamp;
     if (elapsed < leadInDuration) {
@@ -1036,7 +880,6 @@ function runGameSequence(demoMode) {
         lastTickBeat = curBeat;
         if (document.getElementById('tickSelect').value === 'all') playTickSound(false);
       }
-
       if (demoMode) {
         noteList.forEach((n, idx) => {
           if (!n.hitStart && progress >= n.startNorm && progress < n.endNorm) {
@@ -1060,7 +903,6 @@ function runGameSequence(demoMode) {
           showToast('⚠️ MISS (超時未鬆手)', '#FF4757');
         }
       }
-
       drawScene(progress, false, null);
       if (progress < 1) animationFrameId = requestAnimationFrame(loop);
       else {
@@ -1074,25 +916,20 @@ function runGameSequence(demoMode) {
   }
   animationFrameId = requestAnimationFrame(loop);
 }
-
-// --- Controls ---
 window.addEventListener('keydown', e => { if (e.code === 'Space' || e.code === 'KeyZ' || e.code === 'KeyX') { e.preventDefault(); if (!e.repeat) handlePressDown(); }});
 window.addEventListener('keyup', e => { if (e.code === 'Space' || e.code === 'KeyZ' || e.code === 'KeyX') { e.preventDefault(); handlePressUp(); }});
 canvas.addEventListener('mousedown', e => { e.preventDefault(); handlePressDown(); });
 canvas.addEventListener('mouseup', e => { e.preventDefault(); handlePressUp(); });
 canvas.addEventListener('touchstart', e => { e.preventDefault(); handlePressDown(); });
 canvas.addEventListener('touchend', e => { e.preventDefault(); handlePressUp(); });
-
 function handlePressDown() {
   if (!isPlaying || isHolding) return;
   const elapsed = performance.now() - startTimestamp - leadInDuration;
   if (elapsed < -250 || elapsed > barDuration + 200) return;
   const progress = Math.max(0, Math.min(1, elapsed / barDuration));
-
   let closestIdx = -1, minDiffNorm = 999;
   noteList.forEach((n, idx) => { if (!n.hitStart) { const d = Math.abs(progress - n.startNorm); if (d < minDiffNorm) { minDiffNorm = d; closestIdx = idx; }}});
   const diffMs = minDiffNorm * barDuration;
-
   if (closestIdx !== -1 && diffMs <= 260) {
     isHolding = true; activeNoteIdx = closestIdx;
     const note = noteList[closestIdx];
@@ -1108,14 +945,12 @@ function handlePressDown() {
     showToast('MISS ONSET', '#FF4757');
   }
 }
-
 function handlePressUp() {
   if (!isPlaying || !isHolding || activeNoteIdx === -1) return;
   const progress = Math.max(0, Math.min(1, (performance.now() - startTimestamp - leadInDuration) / barDuration));
   const note = noteList[activeNoteIdx];
   note.hitEnd = true; note.actualEndNorm = progress;
   isHolding = false; activeNoteIdx = -1; stopHoldSound(true);
-
   const actDur = Math.max(0, note.actualEndNorm - note.actualStartNorm);
   const diffMs = Math.abs(actDur - note.durationNorm) * barDuration;
   const plateW = Math.min(940, canvas.width * 0.86);
@@ -1129,7 +964,6 @@ function handlePressUp() {
     showToast('👍 GOOD HOLD!', '#FFA502');
   }
 }
-
 function showToast(txt, col) {
   const toast = document.getElementById('feedbackToast');
   if (!toast) return;
@@ -1137,15 +971,12 @@ function showToast(txt, col) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 550);
 }
-
 function evaluateResults() {
   let perf = 0, good = 0, miss = 0;
   noteList.forEach(n => { if (!n.hitStart || !n.hitEnd || n.feedback === 'MISS') miss++; else if (n.feedback === 'PERFECT') perf++; else good++; });
   const totalNotes = noteList.length;
   const accuracy = Math.round(((perf * 100 + good * 60) / (totalNotes * 100)) * 100);
-  
   let stars = '💔'; let title = '😵 挑戰失敗...'; let emoji = '😭';
-  
   if (accuracy >= 90 && miss === 0) {
     stars = '⭐⭐⭐'; title = '🏆 廚神大師！完美通關！'; emoji = '🤩';
     document.getElementById('fcBadge').classList.add('show');
@@ -1154,40 +985,44 @@ function evaluateResults() {
   } else if (accuracy >= 45 && lives > 0) {
     stars = '⭐'; title = '🙂 及格過關！再接再厲！'; emoji = '😊';
   }
-
   setStageRecord(STAGES[currentStageIdx].id, stars);
-
   document.getElementById('modalEmoji').textContent = emoji;
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalStars').textContent = stars;
-  document.getElementById('modalStats').innerHTML = `準確率：<b style="color:#2ED573; font-size:1.25rem;">${accuracy}%</b><br><span style="font-size:0.92rem; color:#747D8C;">✨ Perfect: ${perf} &nbsp;|&nbsp; 👍 Good: ${good} &nbsp;|&nbsp; ⚠️ Miss: ${miss}</span><br><div style="margin-top:6px; color:#FF4757; font-size:1.4rem; font-weight:900;">得分：${score}</div>`;
+  document.getElementById('modalStats').innerHTML = `準確率：<b style="color:#2ED573; font-size:1.25rem;">${accuracy}%</b><br><span style="font-size:0.92rem; color:#747D8C;">✨ Perfect: ${perf}　|　👍 Good: ${good}　|　⚠️ Miss: ${miss}</span><div style="margin-top:6px; color:#FF4757; font-size:1.4rem; font-weight:900;">得分：${score}</div>`;
   playFanfare(stars !== '💔');
   document.getElementById('resultModal').classList.add('show');
 }
-
 function closeModal() { document.getElementById('resultModal').classList.remove('show'); }
-let shuffledDeck = [];
-let clearedStagesCount = 0;
-
-function getNextRandomStageIdx() {
-  if (shuffledDeck.length === 0) {
-    // Indices 1 to 9 correspond to STAGES[1] through STAGES[9] (Stages 2 to 10)
-    shuffledDeck = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (let i = shuffledDeck.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
-    }
+let roundOrder = [];
+let roundPos = 0;
+function buildRoundOrder() {
+  roundOrder = [0,1,2,3,4,5,6,7,8,9];
+  for (let i = roundOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [roundOrder[i], roundOrder[j]] = [roundOrder[j], roundOrder[i]];
   }
-  return shuffledDeck.pop();
+  roundPos = 0;
+  currentStageIdx = roundOrder[0];
 }
-
 function nextStage() {
   closeModal();
-  currentStageIdx = getNextRandomStageIdx();
+  roundPos++;
+  if (roundPos >= roundOrder.length) {
+    document.getElementById('victoryScreen').classList.remove('hidden');
+    playFanfare(true);
+    return;
+  }
+  currentStageIdx = roundOrder[roundPos];
   updateStageDisplay();
   startGame();
 }
-
+function restartAllStages() {
+  document.getElementById('victoryScreen').classList.add('hidden');
+  buildRoundOrder();
+  updateStageDisplay();
+}
+buildRoundOrder();
 resizeCanvas();
 updateHUD(); updateStageDisplay();
 </script>
